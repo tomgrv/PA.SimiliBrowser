@@ -96,11 +96,11 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.9\lib\Net45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -137,13 +137,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PA.Plugin\PA.Plugin.Components\PA.Plugin.Components.csproj">
-      <Project>{7DCE837C-CCAC-47D3-BD8F-CFAFEA09CEAE}</Project>
-      <Name>PA.Plugin.Components</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PA.Plugin\PA.Plugin\PA.Plugin.csproj">
+    <ProjectReference Include="..\PA.Plugin\PA.Plugin.csproj">
       <Project>{557ACE88-A58E-48AB-B7CF-07925CA98530}</Project>
       <Name>PA.Plugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PA.Plugin.Components\PA.Plugin.Components.csproj">
+      <Project>{7DCE837C-CCAC-47D3-BD8F-CFAFEA09CEAE}</Project>
+      <Name>PA.Plugin.Components</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -152,8 +152,8 @@
     </PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Import Project="..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.2.0.1\Build\GitVersionTask.targets')" />
   <Import Project="..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets" Condition="Exists('..\packages\PepitaPackage.1.21.4\build\PepitaPackage.targets')" />
+  <Import Project="..\packages\GitVersionTask.3.0.2\Build\GitVersionTask.targets" Condition="Exists('..\packages\GitVersionTask.3.0.2\Build\GitVersionTask.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
